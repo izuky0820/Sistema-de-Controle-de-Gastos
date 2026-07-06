@@ -1,0 +1,6 @@
+// JSON para persistência dos dados 
+
+{
+    "pessoas": [],
+    "transacoes": []
+}
