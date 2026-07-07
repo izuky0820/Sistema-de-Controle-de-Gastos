@@ -1,11 +1,11 @@
 using System;
-
+namespace Backend.Models;
 public class Pessoa{
     int id;
     int idade;
     string nome;
 
-    public Pessoa(string nome, int idade, int id){
+    public Pessoa(int id, string nome, int idade ){
         this.nome = nome;
         this.idade = idade;
         this.id = id;
@@ -13,6 +13,7 @@ public class Pessoa{
 
     public int Id{
         get{return id;}
+        set{id = value;}
     }
 
     public int Idade{
