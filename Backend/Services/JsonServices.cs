@@ -6,11 +6,11 @@ namespace Backend.Services;
 
 public class JsonService
 {
-
+  
     private readonly string _caminhoArquivo = "Data/dados.json";
-    private async Task<DadosSistema> LerDados() // Ler dados do arquivo .JSON
+    public async Task<DadosSistema> LerDados() // Ler dados do arquivo .JSON
     {
-        if(!(File.Exists(_caminhoArquivo))){return new DadosSistema();}// apenas se o arquivo existir
+        if(!(File.Exists(_caminhoArquivo))){return new DadosSistema();} // apenas se o arquivo existir
         
         string json = await File.ReadAllTextAsync(_caminhoArquivo); // ler todo o texto
 

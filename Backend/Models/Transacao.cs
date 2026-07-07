@@ -1,9 +1,10 @@
-public class Transacoes{
+using Backend.Models;
+public class Transacao{
     int id;
     string descricao;
     double valor;
     TipoTransacao tipo;
-    int PessoaId;
+    int pessoaId;
 
      public Transacao(int id, string descricao, double valor, TipoTransacao tipo, int pessoaId)
     {
@@ -30,6 +31,7 @@ public class Transacoes{
 
     public int PessoaId {
         get{return pessoaId;}
+        set{pessoaId = value;}
     }
 
     public TipoTransacao Tipo
