@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Backend.Models;
@@ -12,7 +13,7 @@ public class JsonService
     {
         if(!(File.Exists(_caminhoArquivo))){return new DadosSistema();} // apenas se o arquivo existir
         
-        string json = await File.ReadAllTextAsync(_caminhoArquivo); // ler todo o texto
+        string json = await File.ReadAllTextAsync(_caminhoArquivo, Encoding.UTF8); // ler todo o texto
 
         if(string.IsNullOrWhiteSpace(json)){return new DadosSistema();}
 
@@ -25,6 +26,6 @@ public class JsonService
 
         string json = JsonSerializer.Serialize(dados, op); // converte objeto para json
 
-        await File.WriteAllTextAsync(_caminhoArquivo, json); //substitui o conteúdo antigo pelo novo;
+        await File.WriteAllTextAsync(_caminhoArquivo, json, Encoding.UTF8); //substitui o conteúdo antigo pelo novo;
     }
 }
