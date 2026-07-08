@@ -1,10 +1,18 @@
 {
   "Pessoas": [
     {
-      "Id": 3,
+      "Id": 1,
       "Idade": 22,
       "Nome": "Pedro"
     }
   ],
-  "Transacoes": []
+  "Transacoes": [
+    {
+      "Id": 1,
+      "Descricao": "Sal\u00E1rio",
+      "Valor": 3000,
+      "PessoaId": 1,
+      "Tipo": 1
+    }
+  ]
 }

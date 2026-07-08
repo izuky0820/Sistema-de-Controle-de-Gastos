@@ -1,12 +1,15 @@
 using Backend.Models;
-public class Transacao{
+namespace Backend.Models;
+
+public class Transacao
+{
     int id;
     string descricao;
     double valor;
     TipoTransacao tipo;
     int pessoaId;
 
-     public Transacao(int id, string descricao, double valor, TipoTransacao tipo, int pessoaId)
+    public Transacao(int id, string descricao, double valor, TipoTransacao tipo, int pessoaId)
     {
         this.id = id;
         this.descricao = descricao;
@@ -15,28 +18,38 @@ public class Transacao{
         this.pessoaId = pessoaId;
     }
 
-    public int Id{
-        get{return id;}
+    public int Id
+    {
+        get { return id; }
+        set { id = value; }
     }
 
-    public string Descricao{
-        get{return descricao;}
-        set{descricao = value;}
+    public string Descricao
+    {
+        get { return descricao; }
+        set { descricao = value; }
     }
 
-    public double Valor{
-        get{return valor;}
-        set{valor = value;}
+    public double Valor
+    {
+        get { return valor; }
+        set { valor = value; }
     }
 
-    public int PessoaId {
-        get{return pessoaId;}
-        set{pessoaId = value;}
+    public int PessoaId
+    {
+        get { return pessoaId; }
+        set { pessoaId = value; }
     }
 
     public TipoTransacao Tipo
     {
-        get{return tipo;}
-        set{tipo = value;}
+        get { return tipo; }
+        set { tipo = value; }
+    }
+    // Sobrescreve ToString para facilitar a depuração e visualização dos objetos.
+    public override string ToString()
+    {
+        return $"Id: {Id} | Descrição: {Descricao} | Valor: {Valor:C} | Tipo: {Tipo} | PessoaId: {PessoaId}";
     }
 }
