@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { api } from "../services/api";
+import { api } from "../../services/api";
 
 /*
  * Interface que define as propriedades recebidas pelo componente.

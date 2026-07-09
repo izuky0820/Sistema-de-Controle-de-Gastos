@@ -1,4 +1,4 @@
-import type { Pessoa } from "../types/Pessoa";
+import type { Pessoa } from "../../types/Pessoa";
 
 /*
  * Propriedades recebidas pelo componente.

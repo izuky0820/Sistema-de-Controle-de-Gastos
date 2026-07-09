@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
 import type { Pessoa } from "../types/Pessoa";
-import PessoaList from "../components/PessoaList";
-import PessoaForm from "../components/PessoaForm";
+import PessoaList from "../components/Pessoa/PessoaList";
+import PessoaForm from "../components/Pessoa/PessoaForm";
 
 /*
  * Página responsável pelo gerenciamento das pessoas.

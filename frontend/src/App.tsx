@@ -1,24 +1,43 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Layout from "./Layout/layout";
+
 import Pessoas from "./pages/Pessoas";
+import Transacoes from "./pages/Transacoes";
+import Totais from "./pages/Totais";
 
 /*
  * Componente principal da aplicação.
  *
- * Sua função é organizar e renderizar
- * as páginas do sistema.
+ * Configura todas as rotas do sistema.
  */
-function App(){
+function App() {
 
-    return(
+    return (
 
-        <div>
+        <BrowserRouter>
 
-            <h1>Controle de Gastos Residenciais</h1>
+            <Routes>
 
-            <hr />
+                <Route path="/" element={<Layout />}>
 
-            <Pessoas/>
+                    <Route index element={<Pessoas />} />
 
-        </div>
+                    <Route
+                        path="transacoes"
+                        element={<Transacoes />}
+                    />
+
+                    <Route
+                        path="totais"
+                        element={<Totais />}
+                    />
+
+                </Route>
+
+            </Routes>
+
+        </BrowserRouter>
 
     );
 
