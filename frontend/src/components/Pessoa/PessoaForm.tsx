@@ -59,33 +59,54 @@ function PessoaForm({ atualizarLista }: PessoaFormProps) {
 
     return (
 
-        <div>
+        <div className="mb-3">
 
-            <h2>Cadastrar Pessoa</h2>
+            <div className="mb-3">
 
-            <input
-                type="text"
-                placeholder="Nome"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
-            />
+                <label className="form-label">
 
-            <br /><br />
+                    Nome
 
-            <input
-                type="number"
-                placeholder="Idade"
-                value={idade}
-                onChange={(e) => setIdade(Number(e.target.value))}
-            />
+                </label>
 
-            <br /><br />
+                <input
+                    className="form-control"
+                    type="text"
+                    value={nome}
+                    onChange={(e) => setNome(e.target.value)}
+                />
 
-            <button onClick={cadastrarPessoa}>
+            </div>
+
+            <div className="mb-3">
+
+                <label className="form-label">
+
+                    Idade
+
+                </label>
+
+                <input
+                    className="form-control"
+                    type="number"
+                    value={idade}
+                    onChange={(e) => setIdade(Number(e.target.value))}
+                />
+
+            </div>
+
+            <button
+                className="btn btn-primary"
+                onClick={cadastrarPessoa}
+            >
+
                 Cadastrar
+
             </button>
 
         </div>
+
+
 
     );
 

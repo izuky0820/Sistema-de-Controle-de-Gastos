@@ -13,9 +13,40 @@ function Layout() {
 
     return (
 
-        <div>
 
-            <h1>Controle de Gastos Residenciais</h1>
+
+        <div className="container mt-5">
+
+            <h1 className="text-center text-primary mb-4">
+                Controle de Gastos Residenciais
+            </h1>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-primary rounded mb-4">
+
+                <div className="container-fluid">
+
+                    <span className="navbar-brand">
+                        Sistema Financeiro
+                    </span>
+
+                    <div className="navbar-nav">
+
+                        <Link className="nav-link" to="/">
+                            Pessoas
+                        </Link>
+
+                        <Link className="nav-link" to="/transacoes">
+                            Transações
+                        </Link>
+
+                        <Link className="nav-link" to="/totais">
+                            Totais
+                        </Link>
+
+                    </div>
+
+                </div>
+
+            </nav>
 
             <hr />
 
