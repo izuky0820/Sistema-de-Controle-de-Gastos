@@ -15,6 +15,18 @@ public class ConsultaTotaisController : ControllerBase
         _jsonService = jsonService;
     }
 
+/*
+ * Calcula o resumo financeiro do sistema.
+ *
+ * Para cada pessoa são calculados:
+ * - Total de receitas;
+ * - Total de despesas;
+ * - Saldo.
+ *
+ * Ao final também são calculados os totais gerais.
+ */
+
+
     // Get
     [HttpGet]
     public async Task<IActionResult> Consultar()

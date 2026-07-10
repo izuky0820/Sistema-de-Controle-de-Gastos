@@ -31,7 +31,8 @@ public class TransacoesController : ControllerBase
     {
         var dados = await _jsonService.LerDados();
 
-        // Verifica se a pessoa existe
+        // Verifica se a pessoa informada existe antes
+        // de criar a transação.
         var pessoa = dados.Pessoas.FirstOrDefault(p => p.Id == novaTransacao.PessoaId);
 
         if (pessoa == null)
@@ -39,7 +40,8 @@ public class TransacoesController : ControllerBase
             return BadRequest("Pessoa não encontrada.");
         }
 
-        // restrição para menores de idade
+        // Regra de negócio:
+        // Menores de idade podem cadastrar apenas despesas.
         if (pessoa.Idade < 18 && novaTransacao.Tipo == TipoTransacao.Receita)
         {
             return BadRequest("Ação permitida apenas para 18+");

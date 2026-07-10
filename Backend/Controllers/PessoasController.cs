@@ -29,6 +29,18 @@ public class PessoasController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Criar(CriarPessoaDto novaPessoa)
     {
+        // Nome obrigatório
+        if (string.IsNullOrWhiteSpace(novaPessoa.Nome))
+        {
+            return BadRequest("O nome é obrigatório.");
+        }
+
+        // Idade válida
+        if (novaPessoa.Idade < 0 || novaPessoa.Idade > 120)
+        {
+            return BadRequest("Idade inválida.");
+        }
+
         var dados = await _jsonService.LerDados();
 
         // Gera um novo ID

@@ -50,21 +50,9 @@ function Layout() {
 
             <hr />
 
-            <nav>
 
-                <Link to="/">Pessoas</Link>
 
-                {" | "}
 
-                <Link to="/transacoes">Transações</Link>
-
-                {" | "}
-
-                <Link to="/totais">Totais</Link>
-
-            </nav>
-
-            <hr />
 
             <Outlet />
 

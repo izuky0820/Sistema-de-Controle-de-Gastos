@@ -32,6 +32,21 @@ function PessoaForm({ atualizarLista }: PessoaFormProps) {
      */
     async function cadastrarPessoa() {
 
+        if (nome.trim() === "") {
+            alert("O nome é obrigatório.");
+            return;
+        }
+
+        if (idade < 0) {
+            alert("A idade não pode ser negativa.");
+            return;
+        }
+
+        if (idade > 120) {
+            alert("Informe uma idade válida.");
+            return;
+        }
+
         try {
 
             await api.post("/pessoas", {
@@ -39,22 +54,17 @@ function PessoaForm({ atualizarLista }: PessoaFormProps) {
                 idade
             });
 
-            // Limpa os campos após o cadastro.
             setNome("");
             setIdade(0);
 
-            // Atualiza a lista exibida.
             atualizarLista();
 
-        }
-        catch (erro) {
+        } catch (erro) {
 
             console.error("Erro ao cadastrar pessoa.", erro);
-
             alert("Não foi possível cadastrar a pessoa.");
 
         }
-
     }
 
     return (

@@ -1,9 +1,14 @@
 ﻿{
   "Pessoas": [
     {
-      "Id": 2,
-      "Idade": 22,
+      "Id": 1,
+      "Idade": 20,
       "Nome": "Evelyn"
+    },
+    {
+      "Id": 2,
+      "Idade": 16,
+      "Nome": "Ana"
     },
     {
       "Id": 3,
@@ -14,22 +19,29 @@
   "Transacoes": [
     {
       "Id": 1,
-      "Descricao": "fd",
-      "Valor": 12,
+      "Descricao": "Receita",
+      "Valor": 1000,
+      "PessoaId": 1,
+      "Tipo": 0
+    },
+    {
+      "Id": 2,
+      "Descricao": "Despesa",
+      "Valor": 100,
       "PessoaId": 2,
       "Tipo": 1
     },
     {
-      "Id": 2,
-      "Descricao": "receita nova",
-      "Valor": 200,
+      "Id": 3,
+      "Descricao": "Receita",
+      "Valor": 2000,
       "PessoaId": 3,
-      "Tipo": 1
+      "Tipo": 0
     },
     {
-      "Id": 3,
-      "Descricao": "teste",
-      "Valor": 44,
+      "Id": 4,
+      "Descricao": "Despesa",
+      "Valor": 90,
       "PessoaId": 2,
       "Tipo": 1
     }
