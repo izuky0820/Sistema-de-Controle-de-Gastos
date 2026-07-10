@@ -1,6 +1,6 @@
 export enum TipoTransacao {
-    Despesa = 0,
-    Receita = 1
+    Receita = 0,
+    Despesa = 1
 }
 
 export interface Transacao {
