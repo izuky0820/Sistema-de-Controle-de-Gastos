@@ -21,7 +21,7 @@ interface PessoaListProps {
 
 /*
  * Componente responsável apenas por exibir
- * a lista de pessoas cadastradas.
+ * a lista de pessoas cadastradas, em forma de tabela.
  *
  * Este componente não faz comunicação com a API.
  * Apenas apresenta os dados e informa qual pessoa
@@ -30,35 +30,54 @@ interface PessoaListProps {
 function PessoaList({ pessoas, excluirPessoa }: PessoaListProps) {
 
     return (
+        <div className="table-responsive">
+            <table className="table table-striped table-hover">
 
-        <ul>
+                <thead>
 
-            {
+                    <tr>
 
-                pessoas.map((pessoa) => (
+                        <th>Nome</th>
 
-                    <li key={pessoa.id}>
+                        <th>Idade</th>
 
-                        {pessoa.nome} - {pessoa.idade} anos
+                        <th></th>
 
-                        {" "}
+                    </tr>
 
-                        <button
-                            onClick={() => excluirPessoa(pessoa.id)}
-                        >
+                </thead>
 
-                            Excluir
+                <tbody>
 
-                        </button>
+                    {pessoas.map((pessoa) => (
 
-                    </li>
+                        <tr key={pessoa.id}>
 
-                ))
+                            <td>{pessoa.nome}</td>
 
-            }
+                            <td>{pessoa.idade}</td>
 
-        </ul>
+                            <td>
 
+                                <button
+                                    className="btn btn-danger btn-sm"
+                                    onClick={() => excluirPessoa(pessoa.id)}
+                                >
+
+                                    Excluir
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    ))}
+
+                </tbody>
+
+            </table>
+        </div>
     );
 
 }

@@ -34,57 +34,58 @@ function TransacaoForm({
      */
     async function cadastrarTransacao() {
 
-    if (descricao.trim() === "") {
-        alert("Informe uma descrição.");
-        return;
+        if (descricao.trim() === "") {
+            alert("Informe uma descrição.");
+            return;
+        }
+
+        if (valor <= 0) {
+            alert("Informe um valor maior que zero.");
+            return;
+        }
+
+        if (pessoaId === 0) {
+            alert("Selecione uma pessoa.");
+            return;
+        }
+
+        try {
+
+            await api.post("/transacoes", {
+
+                descricao,
+                valor,
+                tipo,
+                pessoaId
+
+            });
+
+            setDescricao("");
+            setValor(0);
+            setTipo(TipoTransacao.Receita);
+            setPessoaId(0);
+
+            atualizarLista();
+
+        }
+        catch (erro) {
+
+            console.error("Erro ao cadastrar transação.", erro);
+
+            alert("Não foi possível cadastrar a transação.");
+
+        }
+
     }
-
-    if (valor <= 0) {
-        alert("Informe um valor maior que zero.");
-        return;
-    }
-
-    if (pessoaId === 0) {
-        alert("Selecione uma pessoa.");
-        return;
-    }
-
-    try {
-
-        await api.post("/transacoes", {
-
-            descricao,
-            valor,
-            tipo,
-            pessoaId
-
-        });
-
-        setDescricao("");
-        setValor(0);
-        setTipo(TipoTransacao.Receita);
-        setPessoaId(0);
-
-        atualizarLista();
-
-    }
-    catch (erro) {
-
-        console.error("Erro ao cadastrar transação.", erro);
-
-        alert("Não foi possível cadastrar a transação.");
-
-    }
-
-}
 
     return (
 
-        <div>
+        <div className="formulario">
 
             <h2>Nova Transação</h2>
 
             <input
+                className="form-control"
                 type="text"
                 placeholder="Descrição"
                 value={descricao}
@@ -94,6 +95,7 @@ function TransacaoForm({
             <br /><br />
 
             <input
+                className="form-control"
                 type="number"
                 placeholder="Valor"
                 value={valor}
@@ -157,7 +159,7 @@ function TransacaoForm({
 
             <br /><br />
 
-            <button onClick={cadastrarTransacao}>
+            <button className="btn btn-success" onClick={cadastrarTransacao}>
 
                 Cadastrar
 

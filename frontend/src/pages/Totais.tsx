@@ -59,91 +59,93 @@ function TotaisPage() {
         <div>
 
             <h2>Consulta de Totais</h2>
+            <div className="table-responsive">
 
-            <table border={1}>
+                <table className="table table-striped">
 
-                <thead>
+                    <thead>
 
-                    <tr>
+                        <tr>
 
-                        <th>Pessoa</th>
+                            <th>Pessoa</th>
 
-                        <th>Receitas</th>
+                            <th>Receitas</th>
 
-                        <th>Despesas</th>
+                            <th>Despesas</th>
 
-                        <th>Saldo</th>
+                            <th>Saldo</th>
 
-                    </tr>
+                        </tr>
 
-                </thead>
+                    </thead>
 
-                <tbody>
+                    <tbody>
 
-                    {
+                        {
 
-                        totais.pessoas.map((pessoa) => (
+                            totais.pessoas.map((pessoa) => (
 
-                            <tr key={pessoa.id}>
+                                <tr key={pessoa.id}>
 
-                                <td>{pessoa.nome}</td>
+                                    <td>{pessoa.nome}</td>
 
-                                <td>
-                                    R$ {pessoa.receitas.toFixed(2)}
-                                </td>
+                                    <td>
+                                        R$ {pessoa.receitas.toFixed(2)}
+                                    </td>
 
-                                <td>
-                                    R$ {pessoa.despesas.toFixed(2)}
-                                </td>
+                                    <td>
+                                        R$ {pessoa.despesas.toFixed(2)}
+                                    </td>
 
-                                <td>
-                                    R$ {pessoa.saldo.toFixed(2)}
-                                </td>
+                                    <td>
+                                        R$ {pessoa.saldo.toFixed(2)}
+                                    </td>
 
-                            </tr>
+                                </tr>
 
-                        ))
+                            ))
 
-                    }
+                        }
 
-                </tbody>
+                    </tbody>
 
-            </table>
-
+                </table>
+            </div>
             <hr />
 
-            <h3>Totais Gerais</h3>
+            <div className="card mt-4">
 
-            <p>
+                <div className="card-body">
 
-                <strong>Total de Receitas:</strong>
+                    <h4>Totais Gerais</h4>
 
-                {" "}
+                    <p>
 
-                R$ {totais.totalReceitas.toFixed(2)}
+                        <strong>Receitas:</strong>
 
-            </p>
+                        R$ {totais.totalReceitas.toFixed(2)}
 
-            <p>
+                    </p>
 
-                <strong>Total de Despesas:</strong>
+                    <p>
 
-                {" "}
+                        <strong>Despesas:</strong>
 
-                R$ {totais.totalDespesas.toFixed(2)}
+                        R$ {totais.totalDespesas.toFixed(2)}
 
-            </p>
+                    </p>
 
-            <p>
+                    <p>
 
-                <strong>Saldo Geral:</strong>
+                        <strong>Saldo Geral:</strong>
 
-                {" "}
+                        R$ {totais.saldoGeral.toFixed(2)}
 
-                R$ {totais.saldoGeral.toFixed(2)}
+                    </p>
 
-            </p>
+                </div>
 
+            </div>
         </div>
 
     );

@@ -41,74 +41,75 @@ function TransacaoList({
         <div>
 
             <h2>Transações</h2>
+            <div className="table-responsive">
+                <table className="table table-striped table-hover">
 
-            <table border={1}>
+                    <thead>
 
-                <thead>
+                        <tr>
 
-                    <tr>
+                            <th>Descrição</th>
 
-                        <th>Descrição</th>
+                            <th>Valor</th>
 
-                        <th>Valor</th>
+                            <th>Tipo</th>
 
-                        <th>Tipo</th>
+                            <th>Pessoa</th>
 
-                        <th>Pessoa</th>
+                        </tr>
 
-                    </tr>
+                    </thead>
 
-                </thead>
+                    <tbody>
 
-                <tbody>
+                        {
 
-                    {
+                            transacoes.map((transacao) => (
 
-                        transacoes.map((transacao) => (
+                                <tr key={transacao.id}>
 
-                            <tr key={transacao.id}>
+                                    <td>
 
-                                <td>
+                                        {transacao.descricao}
 
-                                    {transacao.descricao}
+                                    </td>
 
-                                </td>
+                                    <td>
 
-                                <td>
+                                        R$ {transacao.valor.toFixed(2)}
 
-                                    R$ {transacao.valor.toFixed(2)}
+                                    </td>
 
-                                </td>
+                                    <td>
 
-                                <td>
+                                        {
+                                            transacao.tipo === TipoTransacao.Receita
+                                                ? "Receita"
+                                                : "Despesa"
+                                        }
 
-                                    {
-                                        transacao.tipo === TipoTransacao.Receita
-                                            ? "Receita"
-                                            : "Despesa"
-                                    }
+                                    </td>
 
-                                </td>
+                                    <td>
 
-                                <td>
+                                        {
+                                            obterNomePessoa(
+                                                transacao.pessoaId
+                                            )
+                                        }
 
-                                    {
-                                        obterNomePessoa(
-                                            transacao.pessoaId
-                                        )
-                                    }
+                                    </td>
 
-                                </td>
+                                </tr>
 
-                            </tr>
+                            ))
 
-                        ))
+                        }
 
-                    }
+                    </tbody>
 
-                </tbody>
-
-            </table>
+                </table>
+            </div>
 
         </div>
 

@@ -4,6 +4,11 @@
       "Id": 2,
       "Idade": 22,
       "Nome": "Evelyn"
+    },
+    {
+      "Id": 3,
+      "Idade": 21,
+      "Nome": "Daniel"
     }
   ],
   "Transacoes": [
@@ -11,6 +16,20 @@
       "Id": 1,
       "Descricao": "fd",
       "Valor": 12,
+      "PessoaId": 2,
+      "Tipo": 1
+    },
+    {
+      "Id": 2,
+      "Descricao": "receita nova",
+      "Valor": 200,
+      "PessoaId": 3,
+      "Tipo": 1
+    },
+    {
+      "Id": 3,
+      "Descricao": "teste",
+      "Valor": 44,
       "PessoaId": 2,
       "Tipo": 1
     }
